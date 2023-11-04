@@ -2,10 +2,15 @@
 import type { ProductDTO } from '@/services/ProductServiceDtos';
 import Card from 'primevue/card';
 import Button from 'primevue/button';
+import { useCartStore } from '@/stores/cart';
 
-defineProps<{
+const props = defineProps<{
     product: ProductDTO;
 }>();
+
+const cartStore = useCartStore();
+
+const addToCart = () => cartStore.addToCart(props.product);
 </script>
 
 <template>
@@ -13,7 +18,7 @@ defineProps<{
         <template #title>{{ product.name }}</template>
         <template #content>
             <p class="product-text-class">Price: {{ product.price }}$</p>
-            <Button label="Add to cart" />
+            <Button label="Add to cart" @click="addToCart" />
         </template>
     </Card>
 </template>
