@@ -12,7 +12,6 @@ const navigateToLogin = () => window.location.replace('http://www.google.com');
 
 <template>
     <div class="top-bar-div">
-        <h1>My store</h1>
         <nav>
             <Button class="nav-btn-style" @click="navigateToHome" label="Home" />
             <Button class="nav-btn-style" @click="navigateToProducts" label="Products" />
@@ -29,7 +28,6 @@ const navigateToLogin = () => window.location.replace('http://www.google.com');
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1em;
 }
 
 .nav-btn-style {
