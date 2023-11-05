@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ProductDTO } from '@/services/ProductServiceDtos';
+import type { ProductDTO } from '@/services/productServiceDtos';
 import Card from 'primevue/card';
 import Button from 'primevue/button';
 import { useCartStore } from '@/stores/cart';

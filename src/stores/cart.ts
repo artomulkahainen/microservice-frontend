@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
-import type { ProductDTO } from '@/services/ProductServiceDtos';
+import type { ProductDTO } from '@/services/productServiceDtos';
 
 interface CartObject extends ProductDTO {
     count: number;

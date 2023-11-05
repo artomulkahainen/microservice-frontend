@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ProductDTO } from '@/services/ProductServiceDtos';
+import type { ProductDTO } from '@/services/productServiceDtos';
 import ProgressSpinner from 'primevue/progressspinner';
 import ProductCard from './ProductCard.vue';
 

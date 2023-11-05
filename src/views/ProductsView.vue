@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import ProductCardList from '@/components/Products/ProductCardList.vue';
 import { onMounted, ref } from 'vue';
-import { getAllProducts } from '@/services/ProductService';
-import type { ProductDTO } from '@/services/ProductServiceDtos';
+import { getAllProducts } from '@/services/productService';
+import type { ProductDTO } from '@/services/productServiceDtos';
 
 const products = ref<ProductDTO[]>([]);
 
