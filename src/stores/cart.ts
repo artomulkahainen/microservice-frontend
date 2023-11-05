@@ -9,6 +9,8 @@ interface CartObject extends ProductDTO {
 export const useCartStore = defineStore('cart', () => {
     const cart = ref<Record<string, CartObject>>({});
 
+    const getItems = () => Object.values(cart.value);
+
     const addToCart = (product: ProductDTO) => {
         if (!cart.value[product.id]) {
             cart.value = { ...cart.value, [product.id]: { ...product, count: 1 } };
@@ -18,5 +20,18 @@ export const useCartStore = defineStore('cart', () => {
         cart.value[product.id].count++;
     };
 
-    return { cart, addToCart };
+    const removeFromCart = (id: string) => {
+        if (!cart.value[id]) {
+            return;
+        }
+
+        if (cart.value[id].count === 1) {
+            delete cart.value[id];
+            return;
+        }
+
+        cart.value[id].count--;
+    };
+
+    return { cart, getItems, addToCart, removeFromCart };
 });
